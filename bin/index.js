@@ -25,7 +25,7 @@ for(let i = 0 ; i < args.length ; i++ ) {
         let input = checkPlace(args[i+1])
         if(input) {
           robot.place(...input)
-        }
+        } else return
       break
     case 'HELP':
       console.log(`

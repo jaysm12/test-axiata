@@ -1,5 +1,7 @@
 # ROBOT APP
 
+test for applying in axiata
+
 ## Installation
 
 Using CLI 
@@ -40,5 +42,13 @@ $ npm uninstall -g test-axiata
 
 Example valid command :
 ```
-$ robot PLACE
+$ robot PLACE 0,2,north REPORT MOVE LEFT MOVE REPORT
+$ robot PLACE 1,3,east REPORT MOVE MOVE PLACE 1,2,south REPORT
+```
+
+Example wrong command :
+```
+$ robot PLACE 0,2,timur MOVE REPORT
+  Wrong Input
+    f should be one of these : north west east south
 ```
