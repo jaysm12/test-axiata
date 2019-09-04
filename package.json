@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/jaysm12/test-axiata#readme",
   "bin": {
-    "toy" : "./bin/index.js"
+    "robot" : "./bin/index.js"
   }
 }
