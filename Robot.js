@@ -28,11 +28,12 @@ class Robot {
 
     board[x][y] = ' '
     board[moveX][moveY] = 'X'
+    this.coor = [moveX, moveY]
     this.board = board
   }
 
   checkCoor(x, y) {
-    if(x < 5 && y < 5 && x > 0 && y > 0) return true
+    if(x < 5 && y < 5 && x > -1 && y > -1) return true
     else return false
   }
 
