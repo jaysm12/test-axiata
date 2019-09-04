@@ -28,6 +28,7 @@ let init = args[0].split(':')[1].split(',')
         break
       case 'MOVE' :
           robot.move()
+        break
       default:
         console.log(`
         Toy command list : 
