@@ -22,16 +22,15 @@ for(let i = 0 ; i < args.length ; i++ ) {
         robot.move()
       break
     case 'PLACE' :
-        let init = args[i].split(':')[1] && args[i].split(':')[1].split(',')
-        if(init) {
-          if(checkPlace(...init)) robot.place(...init)
-          else return
-        } else return console.log('Invalid input : x, y or f not found')
+        let input = checkPlace(args[i+1])
+        if(input) {
+          robot.place(...input)
+        }
       break
     case 'HELP':
       console.log(`
       Robot command list : 
-        > PLACE:x,y,f : place the robot according coordinate [x, y] facing f (north, south, west, east)
+        > PLACE x,y,f : place the robot according coordinate [x, y] facing f (north, south, west, east)
         > MOVE : move robot forward once to its faced tile
         > LEFT : rotate the robot's current facing to the left once
         > RIGHT : rotate the robot's current facing to the right once
@@ -41,13 +40,18 @@ for(let i = 0 ; i < args.length ; i++ ) {
   }
 }
 
-function checkPlace (x, y, f) {
+function checkPlace (input) {
+  if(input) input = input.split(',')
+  else return console.log('wrong input')
+  if(input.length !== 3) return console.log(`wrong input`)
+  let [x, y, f] = input
   let facing = ['north', 'west', 'east', 'south']
   let num = [0, 1, 2, 3, 4]
   if(!x || !y || !f) {
     console.log(`
       Wrong Input 
-        x, y or f not found`)
+        x, y or f not found
+    `)
     return false
   } else if(!facing.includes(f)) {
     console.log(`
@@ -62,6 +66,6 @@ function checkPlace (x, y, f) {
     `)
     return false
   } else {
-    return true
+    return [x, y, f]
   }
 }

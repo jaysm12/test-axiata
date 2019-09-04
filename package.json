@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/jaysm12/test-axiata#readme",
   "bin": {
-    "robot" : "./bin/index.js"
+    "robot": "./bin/index.js"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
   }
 }
