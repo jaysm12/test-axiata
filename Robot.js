@@ -4,6 +4,7 @@ class Robot {
     this.facing = facing
     this.coor = coor
     this.board = ''
+    this.isPlaced = false
   }
   generateBoard() {
     let arr = []
@@ -15,6 +16,7 @@ class Robot {
   }
 
   move () {
+    if(!this.isPlaced) return console.log('Please place the robot first')
     let board = this.board
     let x = this.coor[0]
     let y = this.coor[1]
@@ -38,12 +40,14 @@ class Robot {
   }
 
   place (x, y, f) {
+    this.isPlaced = true
     this.facing = f
     this.coor = [Number(x), Number(y)]
     this.generateBoard()
   }
 
   changeFacing(type) {
+    if(!this.isPlaced) return console.log('Please place the robot first')
     let direction = ['north', 'east', 'south', 'west']
     let f = this.facing
     for(let i = 0; i < direction.length; i++) {
@@ -61,6 +65,7 @@ class Robot {
   }
 
   report () {
+    if(!this.isPlaced) return console.log('Please place the robot first')
     console.log('REPORT')
     console.log(this)
   }

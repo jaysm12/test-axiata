@@ -5,12 +5,6 @@ const args = process.argv.slice(2)
 let robot = new Robot()
 
 
-
-if(!args[0].includes('PLACE')) {
-  console.log('Please place the robot first')
-  return
-} 
-
 for(let i = 0 ; i < args.length ; i++ ) {
   let key = args[i]
   if(args[i].includes('PLACE')) key = 'PLACE'
@@ -34,9 +28,9 @@ for(let i = 0 ; i < args.length ; i++ ) {
           else return
         } else return console.log('Invalid input : x, y or f not found')
       break
-    default:
+    case 'HELP':
       console.log(`
-      Toy command list : 
+      Robot command list : 
         > PLACE:x,y,f : place the robot according coordinate [x, y] facing f (north, south, west, east)
         > MOVE : move robot forward once to its faced tile
         > LEFT : rotate the robot's current facing to the left once
