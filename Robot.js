@@ -43,8 +43,21 @@ class Robot {
     this.generateBoard()
   }
 
-  rightLeft() {
-    
+  changeFacing(type) {
+    let direction = ['north', 'east', 'south', 'west']
+    let f = this.facing
+    for(let i = 0; i < direction.length; i++) {
+      if(direction[i] === f) {
+        if(type === 'left') {
+          i === 0 ? f = direction[direction.length - 1] : f = direction[i - 1]
+          break
+        } else {
+          i === direction.length - 1 ? f = direction[0] : f = direction[i + 1]
+          break
+        }
+      }
+    }
+    this.facing = f
   }
 
   report () {

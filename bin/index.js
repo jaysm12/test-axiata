@@ -21,10 +21,10 @@ let init = args[0].split(':')[1].split(',')
           robot.report()
         break
       case 'LEFT' :
-          robot.rightLeft('LEFT')
+          robot.changeFacing('left')
         break
       case 'RIGHT' :
-          robot.rightLeft('RIGHT')
+          robot.changeFacing('right')
         break
       case 'MOVE' :
           robot.move()
