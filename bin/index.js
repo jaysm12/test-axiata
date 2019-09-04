@@ -32,8 +32,8 @@ switch (value) {
       Toy command list : 
         > place x y f : place the robot according coordinate [x, y] facing f (north, south, west, east)
         > move : move robot forward once to its faced tile
-        > left : move robot to the left one tile
-        > right : move robot to the right one tile
+        > left : rotate the robot's current facing to the left once
+        > right : rotate the robot's current facing to the right once
         > report : displaying the robot current coordinate and its facing
     `)
     break
