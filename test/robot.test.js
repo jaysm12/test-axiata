@@ -6,12 +6,21 @@ const robot = new Robot()
 
 describe('testing robot', () => {
   describe('Place command', () => {
+    it('should unable to move, change direction or report when robot has not placed yet ', () => {
+      robot.move()
+      robot.changeFacing('left')
+      
+      expect(robot).to.be.an('object')
+      expect(robot).to.have.property('isPlaced')
+      expect(robot.isPlaced).to.equal(false)
+      expect(robot.coor).to.equal(undefined)
+    })
     it('should place robot correctly', () => {
       const x = 2
       const y = 2
       const f = 'north'
       robot.place(x, y, f)
-      
+
       expect(robot).to.be.an('object')
       expect(robot).to.have.property('facing')
       expect(robot).to.have.property('board')
@@ -21,6 +30,7 @@ describe('testing robot', () => {
       expect(robot.board[x][y]).to.equal('X')
       expect(robot.facing).to.equal(f)
     })
+    
   })
   describe('Change facing commands', () => {
     it('should change the robot direction to east', () => {

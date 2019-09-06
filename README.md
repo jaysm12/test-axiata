@@ -7,6 +7,7 @@ test for applying in axiata
 Using CLI 
 
 ```
+$ npm i
 $ npm i -g .
 $ robot HELP
 
